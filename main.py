@@ -14,7 +14,6 @@ import os
 
 # ----- Setup Flask app ----- #
 app = Flask(__name__)
-SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 Bootstrap(app)
 
