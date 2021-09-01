@@ -18,7 +18,6 @@ app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 Bootstrap(app)
 
 
-
 # ----- Setup Connection to DB ----- #
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:///todo.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -102,7 +101,7 @@ class User(db.Model, UserMixin):
         return not equal
 
 
-db.create_all()
+# db.create_all()
 
 # Makes the "current_year" variable available in every template #
 @app.context_processor
