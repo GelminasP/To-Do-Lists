@@ -20,7 +20,7 @@ Bootstrap(app)
 
 # ----- Setup Connection to DB ----- #
 if os.environ.get('DATABASE_URL') is None:
-    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///listit.db'
+    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///todo.db'
 else:
     uri = os.environ.get('DATABASE_URL')
     if uri.startswith("postgres://"):
