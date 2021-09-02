@@ -19,7 +19,7 @@ Bootstrap(app)
 
 
 # ----- Setup Connection to DB ----- #
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL_FIXED", "sqlite:///todo.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:///todo.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -64,7 +64,7 @@ class User(db.Model, UserMixin):
     lists = relationship("List", back_populates="user")
 
 
-#db.create_all()
+# db.create_all()
 
 # Makes the "current_year" variable available in every template #
 @app.context_processor
